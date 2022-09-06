@@ -1,6 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-const Card = ({ src, name, population, region, capital }) => {
+interface Props {
+  src:string
+  name:string
+  population:number
+  region:string
+  capital:string
+}
+const Card = ({ src, name, population, region, capital }:Props) => {
   return (
     <Link href={`/details/${name}`}>
       <div className="cursor-pointer dark:bg-darker bg-white drop-shadow-md max-w-sm rounded-md">

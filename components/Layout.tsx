@@ -5,9 +5,9 @@ interface Props {
   children:React.ReactNode
   title:string
 }
-const Home = ({ children,title ='Title'}:Props) => {
+const Layout = ({ children,title ='Title'}:Props) => {
   return (
-    <div className="w-full h-full dark:bg-dark bg-light">
+    <div className="w-full min-h-screen dark:bg-dark bg-light">
       <Head>
         <title>{title}</title>
       </Head>
@@ -17,4 +17,4 @@ const Home = ({ children,title ='Title'}:Props) => {
   );
 };
 
-export default Home;
+export default Layout;

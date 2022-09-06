@@ -3,7 +3,14 @@ import React from 'react'
 import Layout from '../../components/Layout'
 import Image from 'next/image'
 import { GetServerSideProps } from 'next/types'
-const country = ({data}:any) => {
+import CountryInterface from '../../interfaces/CountryInterface'
+interface Props extends CountryInterface{
+  population:number
+  subregion:string
+  capital:[]
+  topleveldomain:string
+}
+const country = ({data}:{data: Props }) => {
   console.log(data)
   return (
     <Layout title={data.name.common}>
