@@ -1,13 +1,13 @@
 import Head from "next/head";
 import NavBar from "../components/NavBar";
-import React from 'react'
+import React from "react";
 interface Props {
-  children:React.ReactNode
-  title:string
+  children: React.ReactNode;
+  title: string;
 }
-const Layout = ({ children,title ='Title'}:Props) => {
+const Layout = ({ children, title = "Title" }: Props) => {
   return (
-    <div className="w-full min-h-screen dark:bg-dark bg-light">
+    <div className="w-full min-h-screen dark:bg-darker bg-light">
       <Head>
         <title>{title}</title>
       </Head>
