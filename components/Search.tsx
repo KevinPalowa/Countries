@@ -13,7 +13,7 @@ const Search = ({ value, onChange }: Props) => {
         <input
           onChange={onChange}
           placeholder="Search for country..."
-          className="drop-shadow-md dark:bg-dark pl-14 bg-white w-full py-3 rounded-md font-semibold"
+          className="drop-shadow-md dark:bg-dark pl-14 bg-white w-full py-3 rounded-md font-semibold outline-[#858585]"
           value={value}
         />
       </div>
