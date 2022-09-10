@@ -29,6 +29,7 @@ const Cards = ({ items, query }: Props) => {
     <div className="grid sm:grid-cols-4 grid-cols-1 gap-12">
       {filtered?.map((country: any) => (
         <Card
+          href={country.cca2}
           name={country.name.common}
           population={country.population}
           region={country.region}
