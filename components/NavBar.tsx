@@ -8,7 +8,7 @@ const NavBar = () => {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
   return (
-    <div className="dark:bg-dark bg-white flex justify-between dark:text-white text-dark font-semibold drop-shadow-md px-14 py-5">
+    <div className="dark:bg-dark bg-white flex justify-between  font-semibold drop-shadow-md px-14 py-5">
       <Link href="/">
         <a className="font-extrabold text-xl">Where in the world?</a>
       </Link>
