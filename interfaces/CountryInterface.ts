@@ -8,7 +8,7 @@ export default interface CountryInterface {
     official: string;
     nativeName: {};
   };
-  capital: string[];
+  capital: string[] | undefined;
   region: string;
   people: number;
 }
