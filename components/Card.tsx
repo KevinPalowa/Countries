@@ -6,10 +6,11 @@ interface Props {
   population: number;
   region: string;
   capital: string;
+  href: string;
 }
-const Card = ({ src, name, population, region, capital }: Props) => {
+const Card = ({ src, name, population, region, capital, href }: Props) => {
   return (
-    <Link href={`/details/${name}`}>
+    <Link href={`/details/${href}`}>
       <div className="cursor-pointer dark:bg-dark bg-white drop-shadow-md max-w-sm rounded-md">
         <div className="w-full h-44 rounded-t-md relative">
           <Image
