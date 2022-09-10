@@ -9,7 +9,6 @@ const Home: NextPage = ({ countries }: any) => {
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
   };
-
   return (
     <Layout title="Countries App">
       <div className="flex justify-between sm:flex-row flex-col sm:mx-0 -mx-10 my-10 sm:space-y-0 space-y-14">
@@ -33,7 +32,7 @@ const Home: NextPage = ({ countries }: any) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const res = await fetch(
-    "https://restcountries.com/v3.1/all?fields=name,capital,population,flags,region"
+    "https://restcountries.com/v3.1/all?fields=name,capital,population,flags,region,codes,cca2"
   );
   const countries = await res.json();
   return {
