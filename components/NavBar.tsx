@@ -13,8 +13,18 @@ const NavBar = () => {
         <a className="font-extrabold text-xl">Where in the world?</a>
       </Link>
       <div className="flex items-center">
-        <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
-          {mounted && theme === "light" ? <BiSun /> : <BiMoon />}
+        <button
+          className="flex items-center space-x-2"
+          onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+        >
+          {mounted && theme === "light" ? (
+            <>
+              <BiSun />
+            </>
+          ) : (
+            <BiMoon />
+          )}
+          <p className="capitalize">{theme} Mode</p>
         </button>
       </div>
     </div>
