@@ -12,6 +12,9 @@ interface Props extends CountryInterface {
   subregion: string;
   topleveldomain: string;
   borders: string[];
+  tld: string[];
+  currencies: {};
+  languages: {} | undefined;
 }
 const getSlug = async () => {
   const data = await axios.get(
@@ -41,8 +44,25 @@ const getCountry = async (code: string) => {
   }
   return country;
 };
-const Country = ({ data }: { data: Props }) => {
+const Country = ({ data }: { data: Props; fn: (keys: string) => void }) => {
   const router = useRouter();
+  function objectMap(object: any) {
+    let string = "";
+    Object.keys(object).forEach((key) => {
+      string += `${object[key].name} `;
+    });
+
+    return string;
+  }
+
+  function objectMap2(object: any) {
+    let string = "";
+    Object.keys(object).forEach((key) => {
+      string += `${object[key]} `;
+    });
+
+    return string;
+  }
   return (
     <Layout title={data.name.common}>
       <button
@@ -79,9 +99,21 @@ const Country = ({ data }: { data: Props }) => {
               )}
             </div>
             <div className="">
-              <List string="Top Level Domain:" values={data.topleveldomain} />
-              <List string="Currencies" />
-              <List string="Languages" />
+              {data.tld ? (
+                <List string="Top Level Domain" values={data.tld[0]} />
+              ) : (
+                ""
+              )}
+              {data.currencies ? (
+                <List string="Currencies" values={objectMap(data.currencies)} />
+              ) : (
+                ""
+              )}
+              {data.languages ? (
+                <List string="Languages" values={objectMap2(data.languages)} />
+              ) : (
+                ""
+              )}
             </div>
           </div>
           <div className="flex  mt-10 sm:flex-row flex-col">
